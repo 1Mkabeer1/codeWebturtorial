@@ -1,11 +1,11 @@
 const express = require('express');
-const { path } = require('express/lib/application');
+// const { path } = require('express/lib/application');
 const { param } = require('express/lib/request');
-// const path = require(path);
+// const paths = require(path);
 const app = express()
 const port = 4000;
 app.set("view engine", "ejs");
-app.set("views", path.join("__dirname", "/views"));
+// app.set("views", paths.join("__dirname", "/views"));
 
 /*
  #first expirament under expressjs turtorial 
