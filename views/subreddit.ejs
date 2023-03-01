@@ -1,0 +1,36 @@
+
+                <!-- html heading component and navigation bar -->
+<!-- ------------------------------------------------------------------- -->
+<%- include('partials/header')%>
+<%- include('partials/navbar.ejs') %> 
+<!-- ------------------------------------------------------------------- -->  
+
+                        <!-- main subreddit parsed data -->
+  <div class="container">
+    <h1>Browsing the <%= name %> subreddit</h1>
+    <h3> <span style="color: blue; font-size:xx-large;">Description-> </span> <%=  description %></h3>
+    <h5 style="color: red;"><b><%= subscribers %> </b>:Subscribers </h5>
+<!--  
+    <% for(let post of posts) { %>
+        <article>
+            <p><%= post.title %> - <b><%=post.author %></b></p>
+            <% if(post.img) { %>
+            <img src="<%= post.img %>" alt="<%= subreddit %> image">
+            <% } %>
+        </article>
+        <% } %>
+-->
+
+   <%  posts.map( post => { %> 
+    <article>
+        <p><%= post.title %> - <b><%=post.author %></b></p>
+        <% if(post.img) { %>
+        <img src="<%= post.img %>" alt="<%= subreddit %> image">
+        <% } %>
+    </article>
+    <% }) %> 
+</div>
+                         <!-- footer component -->
+<!-- ------------------------------------------------------------------- -->
+<%- include('partials/footer.ejs') %>
+<!-- ------------------------------------------------------------------- -->
